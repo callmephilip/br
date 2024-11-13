@@ -6,4 +6,7 @@
 __all__ = ['foo']
 
 # %% ../00_core.ipynb 3
+import openai
+
+# %% ../00_core.ipynb 8
 def foo(): pass

@@ -7,3 +7,4 @@
 - added `.pre-commit-config.yaml`
 - install pre-commit hooks: `pre-commit install`
 - clean up `index.ipynb` (`{{}}` did not get picked up correctly?)
+- add dependencies in `settings.ini` and run to install package locally `pip install -e '.[dev]'`
