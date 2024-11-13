@@ -12,4 +12,5 @@ jobs:
       - name: Run image
         run: docker run -d -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} -p 5001:5001 br
       - name: Test server
-        run: curl -X GET http://localhost:5001 -H "Accept: application/json"
+        run: |
+          curl -X GET http://localhost:5001 -H "Content-Type: application/json"
