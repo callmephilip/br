@@ -14,3 +14,10 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps: [uses: fastai/workflows/quarto-ghp@master]
+  build_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build image
+        run: docker build -t br .
+      - name: Run image
+        run: docker run -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} -p 5001:5001 br
