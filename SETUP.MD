@@ -6,3 +6,4 @@
 - update settings.ini see [this](https://github.com/fastai/nbdev/blob/master/settings.ini)
 - added `.pre-commit-config.yaml`
 - install pre-commit hooks: `pre-commit install`
+- clean up `index.ipynb` (`{{}}` did not get picked up correctly?)
