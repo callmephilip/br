@@ -1,13 +1,6 @@
 name: Build server
-
-permissions:
-  contents: write
-  pages: write
-
 on:
-  push:
-    branches: [ "main", "master" ]
-  workflow_dispatch:
+  push: branches: [ "main", "master" ]
 jobs:
   build_server:
     runs-on: ubuntu-latest
