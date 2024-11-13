@@ -8,9 +8,11 @@ __all__ = ['generate_image']
 # %% ../00_core.ipynb 3
 import openai
 from dotenv import load_dotenv
+from typing import List
+from fastcore.test import *
 
 # %% ../00_core.ipynb 9
-def generate_image():
+def generate_image(additional_elements: List[str] = []) -> str:
   prompt, model = "Generate an image of a proper Irish breakfast roll", "dall-e-3"
   client = openai.OpenAI()
   response = client.images.generate(prompt=prompt, model=model)
