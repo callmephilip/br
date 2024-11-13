@@ -13,7 +13,14 @@ from fastcore.test import *
 
 # %% ../00_core.ipynb 9
 def generate_image(additional_elements: List[str] = []) -> str:
-  prompt, model = "Generate an image of a proper Irish breakfast roll", "dall-e-3"
+  prompt, model = "Generate an image of a proper Irish breakfast roll.", "dall-e-3"
+
+  if len(additional_elements):
+    forbidden_stuff = ["avocado", "earl grey"]
+    for element in additional_elements:
+      if element in forbidden_stuff: raise ValueError(f"{element} is not allowed")
+    prompt += " Make sure to include the following things in the image: " + ", ".join(additional_elements)
+
   client = openai.OpenAI()
   response = client.images.generate(prompt=prompt, model=model)
   return response.data[0].url
