@@ -1,0 +1,39 @@
+[
+  {
+    "objectID": "SETUP.html",
+    "href": "SETUP.html",
+    "title": "br",
+    "section": "",
+    "text": "make sure you have pre-commits installed\nuse template https://github.com/fastai/nbdev-template\ncreate env python -m venv br-env\nactivate env source br-env/bin/activate\ninstall stuff pip install nbdev pre-commit\nupdate settings.ini see this\nadded .pre-commit-config.yaml\ninstall pre-commit hooks: pre-commit install\nclean up index.ipynb ({{}} did not get picked up correctly?)\nadd dependencies in settings.ini and run to install package locally pip install -e '.[dev]'"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "Dependencies\nBreakfast roll package uses OpenAI Dall-E for image generation. We might consider alternative implementation in the future\nlet’s make sure things are working as expected on their side\n\nfrom IPython.display import Image, display\n\n\nprompt = \"An astronaut lounging in a tropical resort in space, pixel art\"\nmodel = \"dall-e-3\"\n\nresponse = openai.OpenAI().images.generate(prompt=prompt, model=model)\n\n# Display the image from the URL\ndisplay(Image(url=response.data[0].url))\n\n\n\n\n\nsource\n\ngenerate_image\n\n generate_image (additional_elements:List[str]=[])\n\nHere’s an example of simple usage\n\ndisplay(Image(url=generate_image()))\n\n\n\n\nYou can also ask for additional things in the image\n\ndisplay(Image(url=generate_image(additional_elements=[\"tea\", \"milk\"])))\n\n\n\n\n\nTests\n\ntest_fail(lambda: generate_image(additional_elements=[\"avocado\"]), contains=\"not allowed\")",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "adapters.html",
+    "href": "adapters.html",
+    "title": "adapters",
+    "section": "",
+    "text": "source\n\nindex\n\n index (request)\n\n\nTests\n\nclient = TestClient(br_starlette)\nresponse = client.get('/')\nassert response.status_code == 200",
+    "crumbs": [
+      "adapters"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "br",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation.",
+    "crumbs": [
+      "index.html"
+    ]
+  }
+]
