@@ -5,4 +5,5 @@ d = { 'settings': { 'branch': 'master',
                 'doc_host': 'https://callmephilip.github.io',
                 'git_url': 'https://github.com/callmephilip/br/',
                 'lib_path': 'br'},
-  'syms': {'br.core': {'br.core.generate_image': ('core.html#generate_image', 'br/core.py')}}}
+  'syms': { 'br.adapters': {'br.adapters.index': ('adapters.html#index', 'br/adapters.py')},
+            'br.core': {'br.core.generate_image': ('core.html#generate_image', 'br/core.py')}}}
